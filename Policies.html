@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bijli Bill Policy</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html, body {
+            height: 100%;
+        }
+
+        body {
+            display: flex;
+            flex-direction: column;
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            background-color: #f4f4f4;
+        }
+
+        header {
+            background: #35424a;
+            color: #ffffff;
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        h1 {
+            margin: 0;
+        }
+
+        main {
+            flex: 1;
+            padding: 20px;
+        }
+
+        .policy {
+            background: #ffffff;
+            margin: 20px 0;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            color: #35424a;
+        }
+
+        ul {
+            list-style-type: none;
+        }
+
+        li {
+            margin: 10px 0;
+            padding-left: 1em;
+            position: relative;
+        }
+
+        li:before {
+            content: '✔';
+            position: absolute;
+            left: 0;
+            color: #27ae60;
+        }
+
+        /* Footer styling */
+        footer {
+            background-color: #333;
+            color: white;
+            padding: 15px;
+            text-align: center;
+        }
+
+        footer p {
+            margin: 5px 0;
+        }
+
+        footer a {
+            color: #007bff;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            color: #00aaff;
+        }
+
+        /* Back button styling */
+        .back-button {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #007bff;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-size: 1.1rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+        }
+
+        .back-button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Bijli Bill System Policy</h1>
+    </header>
+    <main>
+        <section class="policy">
+            <h2>Overview</h2>
+            <p>The Bijli Bill system governs the billing and payment process for electricity consumption.</p>
+        </section>
+        <section class="policy">
+            <h2>Key Policies</h2>
+            <ul>
+                <li><strong>Tariff Structure:</strong> Different rates apply based on usage levels.</li>
+                <li><strong>Billing Cycle:</strong> Monthly or bi-monthly billing.</li>
+                <li><strong>Payment Methods:</strong> Various options including online and in-person payments.</li>
+                <li><strong>Late Fees:</strong> Charges may apply if payment is late.</li>
+                <li><strong>Disconnection Policy:</strong> Service may be disconnected for non-payment.</li>
+                <li><strong>Consumer Rights:</strong> Protection against unfair billing practices.</li>
+                <li><strong>Subsidies and Relief Programs:</strong> Assistance for low-income households.</li>
+            </ul>
+        </section>
+
+        <!-- Back Button -->
+        <a href="/"><button class="back-button">Back</button></a>
+
+    </main>
+    <footer>
+        <p>&copy; 2024 Bijli Bill System</p>
+    </footer>
+</body>
+</html>

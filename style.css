@@ -1,0 +1,184 @@
+/* General Body Styling */
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f5f5f5;
+    margin: 0;
+    padding: 0;
+}
+
+
+/* Container */
+.container {
+    width: 80%;
+    margin: 50px auto;
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Header Styling */
+h1, h2 {
+    text-align: center;
+    color: #4a90e2;
+    font-size: 24px;
+    font-weight: 600;
+}
+
+/* Button Styling */
+button {
+    width: 100%;
+    padding: 12px;
+    background-color: #4a90e2;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-bottom: 10px;
+}
+
+button:hover {
+    background-color: #357ABD;
+}
+
+#insert-data-btn {
+    margin-top: 20px;
+}
+
+/* Small Print Button */
+#print-btn {
+    width: 110px;
+    height: 40px;
+    background-color: #e84c3d;
+    color: white;
+    font-size: 12px;
+    font-weight: bold;
+    border-radius: 100px;
+    border: none;
+    cursor: pointer;
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#print-btn:hover {
+    background-color: #503854;
+}
+
+/* Form Styling */
+#insert-form label {
+    display: block;
+    margin-top: 10px;
+}
+
+#insert-form input {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+/* Table Styling */
+#output table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    font-size: 16px;
+    overflow-x: auto;
+}
+
+#output th, #output td {
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+    text-align: left;
+}
+
+#output th {
+    background-color: #4a90e2;
+    color: white;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+#output tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+#output tr:hover {
+    background-color: #f1f1f1;
+}
+
+#output {
+    margin-top: 20px;
+    overflow-x: auto; /* Ensures table doesn't overflow */
+}
+
+
+
+/* Print Styling */
+@media print {
+    body {
+        background-color: white;
+        margin: 0; /* Remove default margin for print */
+    }
+
+    .container {
+        width: 100%; /* Full width for printing */
+        margin: 0; /* No margin */
+        box-shadow: none; /* Remove shadow */
+        border-radius: 0; /* No rounded corners */
+    }
+
+    #insert-form, #insert-data-btn, #print-btn {
+        display: none; /* Hide buttons and forms when printing */
+    }
+
+    h1, h2 {
+        font-size: 22px; /* Adjust heading size for print */
+    }
+
+    /* Ensure all tables print correctly */
+    #output table {
+        width: 100%; /* Ensure full width */
+        border: 1px solid #ddd; /* Add border for print */
+    }
+
+    #output th, #output td {
+        border: 1px solid #ddd; /* Ensure borders show in print */
+    }
+}
+
+.nav {
+    background-color: #f39c12;
+    padding: 10px 0;
+
+    /* Back button styling */
+    .back-button {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        background-color: #007bff;
+        color: white;
+        padding: 10px 20px;
+        border-radius: 5px;
+        text-decoration: none;
+        font-size: 1.1rem;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    }
+
+    /* Footer styling */
+    /* Footer Styling */
+footer {
+    background-color: #333;
+    color: white;
+    padding: 15px;
+    text-align: center;
+    width: 100%;
+}

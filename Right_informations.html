@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Right to Information - Bijli Bill System</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+            background: linear-gradient(135deg, #f0f4c3, #c8e6c9); /* Soft gradient */
+            color: #424242;
+        }
+
+        header {
+            background: #4caf50; /* Green */
+            color: #ffffff;
+            padding: 60px 20px;
+            text-align: center;
+            position: relative;
+        }
+
+        header h1 {
+            font-size: 3em;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+        }
+
+        header h2 {
+            font-size: 1.8em;
+            margin-top: 10px;
+            font-weight: 300;
+        }
+
+        main {
+            padding: 20px;
+            max-width: 900px;
+            margin: auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .rti-info {
+            background: #ffffff;
+            border-radius: 15px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+            padding: 20px;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .rti-info:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        .rti-info h2 {
+            font-size: 1.5em;
+            color: #388e3c; /* Darker green */
+            margin-bottom: 10px;
+        }
+
+        ul {
+            list-style-type: none;
+            padding-left: 0;
+        }
+
+        li {
+            margin: 10px 0;
+            padding-left: 1.5em;
+            position: relative;
+            font-size: 1.1em;
+        }
+
+        li:before {
+            content: '✔️';
+            position: absolute;
+            left: 0;
+            color: #4caf50; /* Green */
+            font-size: 1.5em;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background: #4caf50; /* Green */
+            color: #ffffff;
+            margin-top: 20px;
+            border-top: 4px solid #388e3c; /* Darker Green */
+        }
+
+        @media (max-width: 600px) {
+            header {
+                padding: 40px 10px;
+            }
+
+            header h1 {
+                font-size: 2.5em;
+            }
+
+            header h2 {
+                font-size: 1.5em;
+            }
+        }
+
+        /* Back button styling */
+        .back-button {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #007bff;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-size: 1.1rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+        }
+
+        .back-button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Right to Information</h1>
+        <h2>Bijli Bill System</h2>
+    </header>
+    <main>
+        <section class="rti-info">
+            <h2>Overview</h2>
+            <p>The Right to Information (RTI) empowers citizens to access information related to the Bijli Bill system, promoting transparency and accountability in the electricity sector.</p>
+        </section>
+        <section class="rti-info">
+            <h2>Key Aspects</h2>
+            <ul>
+                <li><strong>Access to Information:</strong> Request information about billing practices and tariffs.</li>
+                <li><strong>Transparency:</strong> Understand how bills are calculated and any changes to tariffs.</li>
+                <li><strong>Consumer Rights:</strong> Learn about your rights related to billing and complaints.</li>
+                <li><strong>Documentation:</strong> Request documents such as billing guidelines and service contracts.</li>
+                <li><strong>Timely Responses:</strong> Authorities must respond to requests within a specified period.</li>
+                <li><strong>Exemptions:</strong> Some sensitive information may be exempt from disclosure.</li>
+                <li><strong>Filing Process:</strong> Instructions on how to file RTI requests effectively.</li>
+            </ul>
+        </section>
+    
+    </main>
+    <footer>
+        <p>&copy; 2024 Bijli Bill System - Right to Information</p>
+    </footer>
+
+    <!-- Back Button -->
+    <a href="/"><button class="back-button">Back</button></a>
+
+</body>
+</html>

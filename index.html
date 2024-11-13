@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Billing App</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+   
+
+</head>
+<body>
+    <!-- <nav>
+        <ul>
+            <li class="brand"><img src="templates\bg9.jpg" alt="Fighter_song"> Surbhi</li>
+            <li>Home</li>
+            <li>About</li>
+            <li>Favourite</li>
+            <li>Setting</li>
+        </ul>
+    </nav> -->
+    <button id="print-btn" onclick="window.print()">Print</button>
+    <div class="container">
+        <h1>Billing Management System</h1>
+
+        <!-- Table Selection -->
+    
+        <label for="table-select">Choose a Table:</label>
+        <select id="table-select">
+            <option value="Muskan">Muskan</option>
+            <option value="Rambha">Rambha</option>
+            <option value="Sanjeev">Sanjeev</option>
+            <option value="Shivani">Shivani</option>
+            <option value="Shweta">Shweta</option>
+        </select>
+
+        <!-- Operation Selection -->
+        <h2>Select Operation</h2>
+        <button id="insert-data-btn">Insert Data</button>
+        <button id="fetch-data-btn" style="display: none;">Fetch Data</button>
+
+        <!-- Form for Inserting Data -->
+        <div id="insert-form" style="display: none;">
+            <h3>Insert Data into Table</h3>
+            <form id="insert-data-form">
+                <label for="previous_date">Previous Date:</label>
+                <input type="date" id="previous_date" name="previous_date" required>
+
+                <label for="previous_reading">Previous Reading:</label>
+                <input type="number" id="previous_reading" name="previous_reading" required>
+
+                <label for="date_upto">Date Upto:</label>
+                <input type="date" id="date_upto" name="date_upto" required>
+
+                <label for="current_reading">Current Reading:</label>
+                <input type="number" id="current_reading" name="current_reading" required>
+
+                <label for="cost_of_unit">Cost of Unit:</label>
+                <input type="number" step="0.01" id="cost_of_unit" name="cost_of_unit" required>
+
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+
+        
+
+        <!-- Output for Fetched Data -->
+        <div id="output"></div>
+    </div>
+
+  
+
+
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+
+
+</body>
+</html>

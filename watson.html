@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bijli Bill Management</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #f3f4f6;
+            margin: 0;
+            padding: 20px;
+            color: #333;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            flex-direction: column;
+            position: relative; /* To position footer correctly */
+        }
+        h1 {
+            color: #007bff;
+            font-size: 2.8em;
+            margin: 10px 0; /* Adjusted margin for spacing */
+            text-align: center;
+            text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2);
+        }
+        h2 {
+            color: #333;
+            margin-bottom: 20px;
+            font-size: 1.8em;
+            text-align: center;
+        }
+        .container {
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            padding: 40px;
+            width: 100%;
+            max-width: 600px;  /* Increased width for better visibility */
+            text-align: center;
+        }
+        select {
+            padding: 14px;
+            border: 2px solid #007bff;
+            border-radius: 5px;
+            font-size: 18px;
+            margin-right: 10px;
+            width: 70%;  /* Width adjusted for better balance */
+            transition: border-color 0.3s;
+        }
+        select:hover {
+            border-color: #0056b3;
+        }
+        button {
+            padding: 14px 24px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 18px;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.2s;
+            width: 25%;  /* Button width */
+        }
+        button:hover {
+            background-color: #0056b3;
+            transform: translateY(-2px);
+        }
+        footer {
+            background-color: #d3d3d3; /* Grey background */
+            padding: 15px;
+            width: 100%;
+            position: absolute; /* Position fixed at the bottom */
+            bottom: 0; /* Aligns to the bottom */
+            text-align: center;
+            font-size: 16px;
+            color: #333;
+        }
+        footer p {
+            margin: 0; /* Remove default margin */
+        }
+        img {
+            width: 150px; /* Set a fixed width for the logo */
+            height: 150px; /* Set height equal to width for circular effect */
+            border-radius: 50%; /* Circular shape */
+            object-fit: cover; /* Maintain aspect ratio and fill the space */
+            margin-bottom: 20px; /* Space below the image */
+        }
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 2em;
+            }
+            h2 {
+                font-size: 1.5em;
+            }
+            select, button {
+                width: 100%;
+                margin-bottom: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <img src="{{ url_for('static', filename='image.jpg') }}" alt="Logo"> <!-- Logo Added Here -->
+        <h1>Bijli Bill Management</h1>
+        <h2>Select a Bill Table:</h2>
+        <form action="{{ url_for('view_bills') }}" method="post">
+            <select name="table_name" required>
+                <option value="" disabled selected>Select a table</option>
+                <option value="rambha_bill">Rambha Bill</option>
+                <option value="muskan_bill">Muskan Bill</option>
+                <option value="sanjeev_bill">Sanjeev Bill</option>
+                <option value="shweta_bill">Shweta Bill</option>
+            </select>
+            <button type="submit">View Bills</button>
+        </form>
+    </div>
+    <footer>
+        <p>&copy; 2024 <strong>Bijli Bill Management System</strong>. All rights reserved.</p>
+    </footer>
+</body>
+</html>

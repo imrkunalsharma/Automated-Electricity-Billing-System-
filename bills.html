@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ table_name }} - Bill Management</title>
+    <style>
+        body { font-family: Arial, sans-serif; }
+        table { border-collapse: collapse; width: 100%; margin: 20px 0; }
+        th, td { border: 1px solid #ddd; padding: 8px; text-align: left; }
+        th { background-color: #f2f2f2; }
+        .success { color: green; }
+        .error { color: red; }
+        .clickable { cursor: pointer; color: blue; text-decoration: underline; }
+        .print-button { 
+            float: right; 
+            margin: 20px; 
+            padding: 10px 15px; 
+            background-color: #007bff; 
+            color: white; 
+            text-decoration: none; 
+            border-radius: 5px; 
+        }
+        .print-button:hover { background-color: #0056b3; }
+    </style>
+    <script>
+        function printPage() {
+            window.print();
+        }
+    </script>
+</head>
+<body>
+    <h1>{{ table_name }} Billing Data</h1>
+    
+    <a class="print-button" href="javascript:void(0);" onclick="printPage()">Print</a>
+
+    {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            <ul>
+            {% for message in messages %}
+                <li class="success">{{ message }}</li>
+            {% endfor %}
+            </ul>
+        {% endif %}
+    {% endwith %}
+
+    {% if bills %}
+        <table>
+            <thead>
+                <tr>
+                    <th>Bill ID</th>
+                    <th>Month</th>
+                    <th>Pay Date</th>
+                    <th>Home Rent</th>
+                    <th>Bijli Bill</th>
+                    <th>Total Amount</th>
+                    <th>Status</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for bill in bills %}
+                <tr>
+                    <td><a class="clickable" href="{{ url_for('bill_details', table_name=table_name, bill_id=bill.Bill_id) }}">{{ bill.Bill_id }}</a></td>
+                    <td>{{ bill.Month }}</td>
+                    <td>{{ bill.Pay_Date }}</td>
+                    <td>{{ bill.Home_Rent }}</td>
+                    <td>{{ bill.Bijli_bill }}</td>
+                    <td>{{ bill.Total_Amount }}</td>
+                    <td>{{ bill.Status }}</td>
+                    <td>
+                        <form action="{{ url_for('update_status', table_name=table_name, bill_id=bill.Bill_id) }}" method="post">
+                            <input type="hidden" name="current_status" value="{{ bill.Status }}">
+                            <button type="submit">{{ 'Mark as Unpaid' if bill.Status == 'paid' else 'Mark as Paid' }}</button>
+                        </form>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    {% else %}
+        <p>No data found in the {{ table_name }} table.</p>
+    {% endif %}
+
+    <a class="button" href="{{ url_for('watson') }}">Back to Home</a>
+</body>
+</html>

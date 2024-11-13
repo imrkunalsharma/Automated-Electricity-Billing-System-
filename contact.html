@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Requests</title>
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        table, th, td {
+            border: 1px solid black;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        .success {
+            color: green;
+        }
+    </style>
+</head>
+<body>
+    <h1>Contact Requests</h1>
+
+    <!-- Display any flash messages for success or error -->
+    {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+            {% for category, message in messages %}
+                <p class="{{ category }}">{{ message }}</p>
+            {% endfor %}
+        {% endif %}
+    {% endwith %}
+
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Subject</th>
+            <th>Message</th>
+            <th>Created At</th>
+            <th>Category</th>
+            <th>Actions</th>
+        </tr>
+        {% for request in contact_requests %}
+        <tr>
+            <td>{{ request.id }}</td>
+            <td>{{ request.name }}</td>
+            <td>{{ request.email }}</td>
+            <td>{{ request.subject }}</td>
+            <td>{{ request.message }}</td>
+            <td>{{ request.created_at }}</td>
+            <td>{{ request.category }}</td>
+            <td>
+                <form action="{{ url_for('update_category', request_id=request.id) }}" method="POST">
+                    <select name="category">
+                        <option value="Solved" {% if request.category == 'Solved' %}selected{% endif %}>Solved</option>
+                        <option value="Unsolved" {% if request.category == 'Unsolved' %}selected{% endif %}>Unsolved</option>
+                    </select>
+                    <button type="submit">Update</button>
+                </form>
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>

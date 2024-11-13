@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tender Information - Bijli Bill System</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html, body {
+            height: 100%;
+        }
+
+        body {
+            display: flex;
+            flex-direction: column;
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            background-color: #f4f4f4;
+        }
+
+        header {
+            background: #35424a;
+            color: #ffffff;
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        h1, h2 {
+            margin: 0;
+        }
+
+        main {
+            flex: 1;
+            padding: 20px;
+        }
+
+        .tender-info {
+            background: #ffffff;
+            margin: 20px 0;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            color: #35424a;
+        }
+
+        ul {
+            list-style-type: none;
+            padding-left: 1em;
+        }
+
+        li {
+            margin: 10px 0;
+            padding-left: 1em;
+            position: relative;
+        }
+
+        li:before {
+            content: '✔';
+            position: absolute;
+            left: 0;
+            color: #27ae60;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background: #35424a;
+            color: #ffffff;
+            width: 100%;
+        }
+
+        /* Back button styling */
+        .back-button {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #007bff;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-size: 1.1rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+        }
+
+        .back-button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Tender Information</h1>
+        <h2>Bijli Bill System</h2>
+    </header>
+    <main>
+        <section class="tender-info">
+            <h2>Tender Overview</h2>
+            <p>This section provides essential details regarding the procurement of services and goods for the Bijli Bill system.</p>
+        </section>
+        <section class="tender-info">
+            <h2>Key Components</h2>
+            <ul>
+                <li><strong>Tender Notices:</strong> Announcements inviting bids for relevant projects.</li>
+                <li><strong>Specifications:</strong> Detailed descriptions of needed services or products.</li>
+                <li><strong>Eligibility Criteria:</strong> Requirements for bidders to participate.</li>
+                <li><strong>Bid Submission Process:</strong> Instructions on how to submit bids.</li>
+                <li><strong>Evaluation Criteria:</strong> Guidelines on bid assessment.</li>
+                <li><strong>Award Information:</strong> Details on successful bidders and contracts.</li>
+            </ul>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 Bijli Bill System - Tender Information</p>
+    </footer>
+
+     <!-- Back Button -->
+     <a href="/"><button class="back-button">Back</button></a>
+
+</body>
+</html>

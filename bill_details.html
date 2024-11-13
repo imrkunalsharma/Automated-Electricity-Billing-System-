@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bill Details - {{ bill.Bill_id }}</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        h1 { color: #333; }
+        .bill-container { border: 1px solid #ddd; padding: 20px; border-radius: 5px; }
+        .bill-header { text-align: center; }
+        table { border-collapse: collapse; width: 100%; margin: 20px 0; }
+        th, td { border: 1px solid #ddd; padding: 8px; text-align: left; }
+        th { background-color: #f2f2f2; }
+        .back-button { margin: 20px; display: inline-block; padding: 10px 15px; background-color: #007bff; color: white; text-decoration: none; border-radius: 5px; }
+        .back-button:hover { background-color: #0056b3; }
+        .print-button { 
+            float: right; 
+            margin: 20px; 
+            padding: 10px 15px; 
+            background-color: #007bff; 
+            color: white; 
+            text-decoration: none; 
+            border-radius: 5px; 
+        }
+        .print-button:hover { background-color: #0056b3; }
+    </style>
+    <script>
+        function printPage() {
+            window.print();
+        }
+    </script>
+</head>
+<body>
+    <div class="bill-container">
+        <div class="bill-header">
+            <h1>Bill ID: {{ bill.Bill_id }}</h1>
+            <h2>Details</h2>
+        </div>
+        <a class="print-button" href="javascript:void(0);" onclick="printPage()">Print</a>
+        <table>
+            <tr>
+                <th>Field</th>
+                <th>Value</th>
+            </tr>
+            <tr>
+                <td>Month</td>
+                <td>{{ bill.Month }}</td>
+            </tr>
+            <tr>
+                <td>Pay Date</td>
+                <td>{{ bill.Pay_Date }}</td>
+            </tr>
+            <tr>
+                <td>Home Rent</td>
+                <td>{{ bill.Home_Rent }}</td>
+            </tr>
+            <tr>
+                <td>Bijli Bill</td>
+                <td>{{ bill.Bijli_bill }}</td>
+            </tr>
+            <tr>
+                <td>Total Amount</td>
+                <td>{{ bill.Total_Amount }}</td>
+            </tr>
+            <tr>
+                <td>Status</td>
+                <td>{{ bill.Status }}</td>
+            </tr>
+        </table>
+        <a class="back-button" href="{{ url_for('watson') }}">Back to Billing List</a>
+    </div>
+</body>
+</html>

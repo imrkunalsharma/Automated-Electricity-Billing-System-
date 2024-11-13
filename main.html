@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Entry</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <h1>Insert or Fetch Data</h1>
+    <form action="/insert" method="POST">
+        <h3>Insert Data</h3>
+        <label for="table">Select Table:</label>
+        <select name="table" required>
+            <option value="Muskan">Muskan</option>
+            <option value="Rambha">Rambha</option>
+            <option value="Sanjeev">Sanjeev</option>
+            <option value="Shivani">Shivani</option>
+            <option value="Shweta">Shweta</option>
+        </select>
+        <input type="date" name="previous_date" required>
+        <input type="number" name="previous_reading" placeholder="Previous Reading" required>
+        <input type="date" name="current_date" required>
+        <input type="number" name="current_reading" placeholder="Current Reading" required>
+        <input type="number" name="cost_of_unit" placeholder="Cost of Unit" required>
+        <button type="submit">Insert Data</button>
+    </form>
+
+    <form action="/fetch" method="POST">
+        <h3>Fetch Data</h3>
+        <select name="table" required>
+            <option value="Muskan">Muskan</option>
+            <option value="Rambha">Rambha</option>
+            <option value="Sanjeev">Sanjeev</option>
+            <option value="Shivani">Shivani</option>
+            <option value="Shweta">Shweta</option>
+        </select>
+        <button type="submit">Fetch Data</button>
+    </form>
+
+    {% if records %}
+    <h2>Fetched Data</h2>
+    <table>
+        <thead>
+            <tr>
+                {% for col in columns %}
+                <th>{{ col }}</th>
+                {% endfor %}
+            </tr>
+        </thead>
+        <tbody>
+            {% for row in records %}
+            <tr>
+                {% for data in row %}
+                <td>{{ data }}</td>
+                {% endfor %}
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    {% endif %}
+</body>
+</html>
